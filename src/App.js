@@ -1,10 +1,16 @@
-import logo from './logo.svg';
+import {Outlet,Link } from 'react-router-dom';
 
 
 function App() {
   return (
-
-    <h1>Hello world</h1> 
+<>
+<nav>
+  <Link to="login">Login</Link> 
+</nav>
+    <main className='wrapper'>
+      <Outlet/> 
+    </main> 
+    </>
   );
 }
 

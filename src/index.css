@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+  width: 100%;
+}
+
+.wrapper > * {
+  text-align: center;
+}
