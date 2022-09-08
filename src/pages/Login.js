@@ -1,14 +1,19 @@
 import { Typography,TextField, Button } from "@mui/material";
 import logo from "../assets/logo.svg"
-import {useState} from 'react';
+import {useCallback, useState} from 'react';
 
-
-const Login = () => {
+{/* передаем пропс onAuth */}
+const Login = ({onAuth}) => {
 
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
-console.log('fields', email,password);
+{/* при нажатии на кнопку будут выводиться логин и пароль  */}
+const handleSumbit = useCallback(async () => 
+{console.log('Data: ',email,password);},
+[email, password,onAuth]);
+
+//console.log('fields', email,password);
 
     return (
     <main className='wrapper dark'>
@@ -37,7 +42,8 @@ console.log('fields', email,password);
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-    <Button variant="contained" color="primary" fullWidth
+    <Button onClick={handleSumbit}
+    variant="contained" color="primary" fullWidth
     sx={{marginTop: 2,}}>
         Log In
     </Button>

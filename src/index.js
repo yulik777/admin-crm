@@ -1,25 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
-  Routes,
-  Route,
 } from "react-router-dom";
-import Login from './pages/Login';
-import Page404 from './pages/Page404';
+import RootRouter from './pages/RootRouter';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-  <Routes>
-    <Route path="/" element={<App />}> 
-    <Route path="" element={<Login />}/> 
-    <Route path="*" element={<Page404 />}/> 
-    </Route>
-  </Routes>
+ <RootRouter/>
 </BrowserRouter>,
 );
    
