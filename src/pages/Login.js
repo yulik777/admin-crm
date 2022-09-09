@@ -9,9 +9,13 @@ const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 
 {/* при нажатии на кнопку будут выводиться логин и пароль  */}
-const handleSumbit = useCallback(async () => 
-{console.log('Data: ',email,password);},
-[email, password,onAuth]);
+const handleSubmit = useCallback(async () => {
+const response = await fetch(`http://localhost:3000/users?email=${email}&password=${password}`);
+const data = await response.json();
+console.log('User: ', data[0]);},
+//onAuth(data[0]),
+[email,password,onAuth]);
+
 
 //console.log('fields', email,password);
 
@@ -42,7 +46,7 @@ const handleSumbit = useCallback(async () =>
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-    <Button onClick={handleSumbit}
+    <Button onClick={handleSubmit}
     variant="contained" color="primary" fullWidth
     sx={{marginTop: 2,}}>
         Log In
