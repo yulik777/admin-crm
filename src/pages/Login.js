@@ -46,10 +46,10 @@ console.log('User: ', data[0]);},
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-    <Button onClick= {handleSubmit}
+    <Button onClick={handleSubmit}
     variant="contained" color="primary" fullWidth
     sx={{marginTop: 2,}}>
-         Log In
+     Log In
     </Button>
      </form>
     </main>
